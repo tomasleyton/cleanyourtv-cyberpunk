@@ -14,6 +14,18 @@ android {
         versionName '2.3'
     }
 
+    // Two looks from one code base. stock is the upstream launcher unchanged; cyberpunk overlays
+    // src/cyberpunk (resources, a few views) and installs under its own package next to it.
+    flavorDimensions 'look'
+    productFlavors {
+        stock { dimension 'look' }
+        cyberpunk {
+            dimension 'look'
+            applicationId 'dev.tleyton.cyberhome'
+            versionNameSuffix '-cyber'
+        }
+    }
+
     buildTypes {
         release {
             // R8 strips and optimises the code (AndroidX included): smaller APK, faster start on a slow TV CPU.

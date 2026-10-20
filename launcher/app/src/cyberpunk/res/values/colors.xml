@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cyberpunk palette: near-black base, cyan accent, magenta secondary. -->
+<resources>
+    <color name="cyber_bg">#FF06060B</color>
+    <color name="cyber_panel">#FF08080F</color>
+    <color name="cyber_tile">#FF0C0C14</color>
+    <color name="cyber_cyan">#FF00F0FF</color>
+    <color name="cyber_cyan_dim">#8000F0FF</color>
+    <color name="cyber_cyan_faint">#1400F0FF</color>
+    <color name="cyber_cyan_edge">#4D00F0FF</color>
+    <color name="cyber_magenta">#FFFF2E88</color>
+    <color name="cyber_magenta_dim">#73FF2E88</color>
+    <color name="cyber_pink">#FFFF5FA2</color>
+    <color name="cyber_text">#FFE6F7FF</color>
+    <color name="cyber_text_mid">#B3E6F7FF</color>
+    <color name="cyber_dim">#FF9FB3C8</color>
+
+    <!-- No tvOS band behind the dock: the neon frame and the cut tiles carry the look. -->
+    <color name="dock_band">#00000000</color>
+    <color name="dock_edge">#00000000</color>
+</resources>

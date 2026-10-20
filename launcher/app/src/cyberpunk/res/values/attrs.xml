@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CyberTileFrame">
+        <!-- true: an info panel (cyan edge) instead of an app tile (magenta edge). -->
+        <attr name="panel" format="boolean" />
+    </declare-styleable>
+</resources>

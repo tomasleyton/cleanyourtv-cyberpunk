@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CRT scanlines: a 1x3 px tile (one faint white row, two clear) repeated over the screen. One
+     texture for the GPU; the alpha is baked into the pixel, so the overlay view needs no layer. -->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/scanline_tile"
+    android:tileMode="repeat"
+    android:antialias="false"
+    android:dither="false"
+    android:filter="false" />

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Static fonts here: no variation settings to apply (the stock flavour sets 'wght' 500). -->
+    <style name="TopButton" parent="TopButtonBase" />
+</resources>

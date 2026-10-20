@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TvHome" parent="android:Theme.Material.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@color/cyber_bg</item>
+        <item name="android:colorBackground">@color/cyber_bg</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!-- Square terminal-style button: cyan hairline, solid cyan when focused. -->
+    <style name="TopButtonBase">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/pill_bg</item>
+        <item name="android:textColor">@drawable/pill_text</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/jetbrains_mono</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:drawableTint">@drawable/pill_text</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="TopButton" parent="TopButtonBase" />
+
+    <!-- Bottom module: a small cyan header line and a monospace body. -->
+    <style name="CyberModuleTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/cyber_cyan</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/jetbrains_mono</item>
+        <item name="android:letterSpacing">0.3</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="CyberModuleBody">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:textColor">@color/cyber_text</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/jetbrains_mono</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+</resources>

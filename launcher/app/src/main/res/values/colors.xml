@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DockDecoration: the lighter band behind the dock row and its hairline edge. -->
+    <color name="dock_band">#FF141416</color>
+    <color name="dock_edge">#1FFFFFFF</color>
+</resources>

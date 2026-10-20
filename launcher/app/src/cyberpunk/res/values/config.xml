@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Cyberpunk flavour: only the keys that differ from main/res/values/config.xml. Package names come
+  from the TV (adb shell cmd package query-activities -a android.intent.action.MAIN
+  -c android.intent.category.LEANBACK_LAUNCHER). The same keys can be changed without a rebuild
+  through config.json in /sdcard/Android/data/dev.tleyton.cyberhome/files/ (themes/README.md).
+-->
+<resources>
+
+    <!-- Dock order (the first `columns` apps form the dock row; the rest lead the grid). -->
+    <string-array name="dock_apps">
+        <item>com.crunchyroll.crunchyroid</item>
+        <item>com.netflix.ninja</item>
+        <item>com.google.android.youtube.tv</item>
+        <item>com.disney.disneyplus</item>
+        <item>com.cbs.ca</item>
+        <item>com.wbd.stream</item>
+        <item>tv.twitch.android.app</item>
+    </string-array>
+
+    <!-- TCL Google TV: Live TV app for the Inputs menu. -->
+    <string name="live_tv_package" translatable="false">com.tcl.tv</string>
+
+    <!-- Two rows on the first screen: the dock and one grid row under it, six tiles each. -->
+    <integer name="rows_below_dock">1</integer>
+    <integer name="columns">6</integer>
+</resources>

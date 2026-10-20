@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Only the strings the cyberpunk look changes; everything else comes from main. -->
+<resources>
+    <string name="app_name">Cyber Home</string>
+    <string name="inputs">[ Inputs ]</string>
+    <string name="settings">[ Settings ]</string>
+    <string name="good_morning">// Good morning</string>
+    <string name="good_afternoon">// Good afternoon</string>
+    <string name="good_evening">// Good evening</string>
+    <string name="good_night">// Good night</string>
+    <string name="date_format">EEEE · d MMM yyyy</string>
+
+    <string name="cyber_module_title">Module // Helios IoT</string>
+    <string name="cyber_module_body" formatted="false">TEMP [--]°C   HUM [--]%   LIGHTS [--]</string>
+    <string name="cyber_status_title">Sys // Status</string>
+    <!-- Free RAM, total RAM, network, launcher version. -->
+    <string name="cyber_status_line">RAM %1$s/%2$s GB · %3$s · v%4$s</string>
+    <string name="cyber_status_offline">No network</string>
+</resources>

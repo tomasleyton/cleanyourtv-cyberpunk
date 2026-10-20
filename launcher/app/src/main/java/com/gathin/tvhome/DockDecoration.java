@@ -17,14 +17,14 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
     private final Paint band = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint edge = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final RectF rect = new RectF();
+    /** Colours come from res/values/colors.xml (dock_band, dock_edge) so a flavour can restyle or drop the band. */
+    private boolean coloured;
 
     DockDecoration(int dockSize, float density) {
         this.dockSize = dockSize;
         this.density = density;
-        band.setColor(0xFF141416);
         edge.setStyle(Paint.Style.STROKE);
         edge.setStrokeWidth(density);
-        edge.setColor(0x1FFFFFFF);
     }
 
     @Override
@@ -39,6 +39,12 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+        if (!coloured) {
+            band.setColor(parent.getContext().getColor(R.color.dock_band));
+            edge.setColor(parent.getContext().getColor(R.color.dock_edge));
+            coloured = true;
+        }
+        if (band.getAlpha() == 0 && edge.getAlpha() == 0) return;   // a flavour without a band
         boolean any = false;
         for (int i = 0; i < parent.getChildCount(); i++) {
             View child = parent.getChildAt(i);

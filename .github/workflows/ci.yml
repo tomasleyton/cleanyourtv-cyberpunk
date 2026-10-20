@@ -43,9 +43,11 @@ jobs:
         working-directory: launcher
         run: |
           chmod +x gradlew
-          ./gradlew --no-daemon testReleaseUnitTest assembleRelease
+          ./gradlew --no-daemon testStockReleaseUnitTest testCyberpunkReleaseUnitTest assembleRelease
       - name: The launcher stays small
         run: |
-          size=$(stat -c %s launcher/app/build/outputs/apk/release/app-release.apk)
-          echo "release APK: $((size / 1024)) KB"
-          test "$size" -lt 409600 || { echo "APK is over 400 KB; the launcher targets 1 GB TVs, keep it small"; exit 1; }
+          for flavor in stock cyberpunk; do
+            size=$(stat -c %s launcher/app/build/outputs/apk/$flavor/release/app-$flavor-release.apk)
+            echo "$flavor release APK: $((size / 1024)) KB"
+            test "$size" -lt 409600 || { echo "$flavor APK is over 400 KB; the launcher targets 1 GB TVs, keep it small"; exit 1; }
+          done
