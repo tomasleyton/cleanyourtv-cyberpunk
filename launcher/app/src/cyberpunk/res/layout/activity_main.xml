@@ -200,6 +200,16 @@
             </LinearLayout>
         </RelativeLayout>
 
+        <!-- Shelf band: the focused app's name (heroName, in the root, placed by MainActivity from the parked
+             dock's top) lives here, outside the grid, so rows scrolled up slide under the band instead of over
+             the name. 58dp makes the parked dock land just under the band (MainActivity's top padding ends up
+             near 0dp). It is its own view rather than a top margin on the wrapper: LinearLayout drops a negative
+             margin sum (10dp - 36dp) from its total, and the 26dp that leaves free under the bottom module is
+             part of the tuned look; a bigger top margin would make the sum positive and push the module down. -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="58dp" />
+
         <!-- The wrapper clips at the grid's edge; the grid itself must not clip so scaled tiles can overflow their cells.
              It reaches 36dp under the bottom module: MainActivity parks the visible rows 30dp above the grid's
              bottom, so this lowers them and hides the peeking third row behind the panels. -->

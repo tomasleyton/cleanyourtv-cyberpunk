@@ -8,6 +8,8 @@
     <string name="good_evening">// Buenas noches</string>
     <string name="good_night">// Buenas noches</string>
     <string name="date_format">EEEE · d MMM yyyy</string>
+    <!-- After the index on the focused app tile: "01 // ACTIVE". -->
+    <string name="tile_focused">%1$s // ACTIVO</string>
 
     <string name="cyber_module_title">Módulo // Helios IoT</string>
     <string name="cyber_module_body" formatted="false">TEMP [--]°C   HUM [--]%   LUCES [--]</string>

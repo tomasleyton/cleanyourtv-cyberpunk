@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hairline edge of an app tile: magenta, cyan on the focused tile (inside the neon frame). -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:color="@color/cyber_cyan_dim" />
+    <item android:color="@color/cyber_magenta_dim" />
+</selector>

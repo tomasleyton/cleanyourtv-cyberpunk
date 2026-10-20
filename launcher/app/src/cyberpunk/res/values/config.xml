@@ -16,6 +16,14 @@
         <item>com.cbs.ca</item>
         <item>com.wbd.stream</item>
         <item>tv.twitch.android.app</item>
+        <item>com.amazon.amazonvideo.livingroom</item>
+    </string-array>
+
+    <!-- Never shown as tiles. com.tcl.partnercustomizer is the remote's TCL Channel key (a shortcut that
+         opens com.tcl.waterfall.overseas, the real app) and carries the same label, so the grid showed
+         "TCL Channel" twice. Replaces main's list, whose entries are Mi TV packages. -->
+    <string-array name="hidden_apps">
+        <item>com.tcl.partnercustomizer</item>
     </string-array>
 
     <!-- TCL Google TV: Live TV app for the Inputs menu. -->
@@ -24,4 +32,13 @@
     <!-- Two rows on the first screen: the dock and one grid row under it, six tiles each. -->
     <integer name="rows_below_dock">1</integer>
     <integer name="columns">6</integer>
+
+    <!-- The focused app's name always goes on the shelf under the clock, whatever the row; the grid starts
+         below the shelf (activity_main.xml) so scrolled rows slide under it instead of over it. -->
+    <bool name="hero_all_rows">true</bool>
+
+    <!-- Which app tiles the cyberpunk home shows (item_app.xml, CyberTileFrame). true: text tiles like the
+         mock, a dark cut box with a pink index ("02") and the app name, no artwork. false: the app's
+         banner artwork (icon and label when it has none). Flip and rebuild. -->
+    <bool name="cyber_text_tiles">true</bool>
 </resources>

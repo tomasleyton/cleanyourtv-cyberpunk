@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Flat: CyberTileFrame paints the cut corners and the edge. -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
-    <solid android:color="@color/cyber_tile" />
-</shape>
+<!-- Flat fill, cyan-tinted while the card has focus; CyberTileFrame paints the cut corners and the edge. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/cyber_tile_focused" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/cyber_tile" />
+        </shape>
+    </item>
+</selector>

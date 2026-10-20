@@ -74,4 +74,10 @@
          tiles that zoom without overshoot, shorter fades and no tile entrance when Home comes back. Set it
          here or with "reduced_motion": true in a theme's config.json; false keeps the normal motion. -->
     <bool name="reduced_motion">false</bool>
+
+    <!-- Title shelf for every row: the focused tile's name goes on the shelf above the parked dock for grid
+         tiles too, instead of under the tile, and the shelf stays put while the grid scrolls. A layout that
+         turns this on should start the grid below the shelf (see src/cyberpunk). false: the stock look,
+         with the shelf for the dock only. -->
+    <bool name="hero_all_rows">false</bool>
 </resources>

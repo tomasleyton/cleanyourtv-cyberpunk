@@ -4,6 +4,8 @@
     <color name="cyber_bg">#FF06060B</color>
     <color name="cyber_panel">#FF08080F</color>
     <color name="cyber_tile">#FF0C0C14</color>
+    <!-- cyber_tile under 14 % cyan: the focused tile of the mock. -->
+    <color name="cyber_tile_focused">#FF0A2D36</color>
     <color name="cyber_cyan">#FF00F0FF</color>
     <color name="cyber_cyan_dim">#8000F0FF</color>
     <color name="cyber_cyan_faint">#1400F0FF</color>

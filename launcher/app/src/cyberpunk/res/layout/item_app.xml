@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- One grid tile, cyberpunk look. Same ids as the stock item (AppAdapter looks them up); the card
-     is a CyberTileFrame, which paints the cut corners and the magenta edge. -->
+<!-- One grid tile, cyberpunk look, in one of two variants chosen by cyber_text_tiles (values/config.xml):
+     - banners (false): the app's banner artwork, or its icon with the label under it, as stock.
+     - text tiles (true): a dark cut-corner box with a small pink index top-left ("02") and the app name
+       bottom-left, like the mock. CyberTileFrame shrinks banner, icon and label to nothing at inflate
+       time (AppAdapter still binds them; the banner drawable still feeds the ambient glow colour) and
+       shows tile_index / tile_name, which it fills itself (see there).
+     Same ids as the stock item: AppAdapter looks them up. The card is a CyberTileFrame, which paints the
+     cut corners and the edge. Focus colours follow the card's state through selectors (tile_bg,
+     color/tile_index, color/tile_edge) and duplicateParentState: no Java for colours. -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -50,8 +57,50 @@
             android:fontFamily="@font/rajdhani_bold"
             android:letterSpacing="0.04"
             android:visibility="gone" />
+
+        <!-- Text tiles only (CyberTileFrame shows them). Grid index, "02", or "01 // ACTIVE" on the focused
+             tile. Fixed height: a text change must not relayout the tile (it is set from onMeasure). -->
+        <TextView
+            android:id="@+id/tile_index"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:visibility="gone"
+            android:layout_gravity="top"
+            android:layout_marginTop="6dp"
+            android:paddingStart="9dp"
+            android:paddingEnd="6dp"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:ellipsize="none"
+            android:includeFontPadding="false"
+            android:duplicateParentState="true"
+            android:textColor="@color/tile_index"
+            android:textSize="11sp"
+            android:fontFamily="@font/jetbrains_mono"
+            android:letterSpacing="0.18" />
+
+        <TextView
+            android:id="@+id/tile_name"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:visibility="gone"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:duplicateParentState="true"
+            android:textColor="@color/cyber_text"
+            android:textSize="17sp"
+            android:fontFamily="@font/rajdhani_bold" />
     </com.gathin.tvhome.CyberTileFrame>
 
+    <!-- The name under a grid tile is not shown here: with hero_all_rows the shelf carries it. AppAdapter
+         still binds and fades this view, so it keeps its size (the row pitch depends on it) and is
+         simply drawn transparent. With text tiles, CyberTileFrame reads its text for tile_name. -->
     <TextView
         android:id="@+id/name"
         android:layout_width="180dp"
@@ -63,7 +112,7 @@
         android:ellipsize="end"
         android:alpha="0"
         android:translationY="-6dp"
-        android:textColor="@color/cyber_dim"
+        android:textColor="@android:color/transparent"
         android:textSize="12sp"
         android:fontFamily="@font/jetbrains_mono"
         android:letterSpacing="0.15"
