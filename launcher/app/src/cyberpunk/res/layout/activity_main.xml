@@ -191,6 +191,12 @@
                     android:drawableStart="@drawable/ic_wifi"
                     android:nextFocusDown="@+id/grid" />
 
+                <!-- TXT / IMG: switches the tiles between text and banner artwork (TileLookButton). -->
+                <com.gathin.tvhome.TileLookButton
+                    android:id="@+id/btnTileLook"
+                    style="@style/TopButton"
+                    android:nextFocusDown="@+id/grid" />
+
                 <TextView
                     android:id="@+id/btnSettings"
                     style="@style/TopButton"
@@ -233,8 +239,12 @@
                 android:descendantFocusability="afterDescendants" />
         </FrameLayout>
 
-        <!-- Bottom module: IoT placeholder and system status. Not focusable, so the D-pad rules
-             in MainActivity are unchanged; the grid simply gets a little shorter. -->
+        <!-- Bottom module: the Helios lamp control and the system status. The Helios panel is the
+             focusable view under the grid (@id/belowGrid, declared in main's ids.xml): Down on the
+             grid's last row lands on it, and it sends Up and Back to the tile focus came from;
+             OK, hold OK, Left/Right and Down drive the lamp (HeliosPanel). Its children copy its
+             drawable state so the whole panel turns cyan with dark text while focused, like the
+             top buttons. -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -242,11 +252,13 @@
             android:layout_marginBottom="22dp"
             android:orientation="horizontal">
 
-            <com.gathin.tvhome.CyberTileFrame
+            <com.gathin.tvhome.HeliosPanel
+                android:id="@id/belowGrid"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:background="@color/cyber_panel"
+                android:background="@drawable/panel_bg"
+                android:focusable="true"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:paddingTop="12dp"
@@ -256,17 +268,44 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:duplicateParentState="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:duplicateParentState="true">
+
+                        <TextView
+                            android:id="@+id/helios_title"
+                            style="@style/CyberModuleTitle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:textColor="@drawable/panel_title_text"
+                            android:duplicateParentState="true"
+                            android:text="@string/cyber_module_title" />
+
+                        <!-- Replaces the title while the panel is focused (HeliosPanel.render). -->
+                        <TextView
+                            android:id="@+id/helios_hint"
+                            style="@style/CyberModuleTitle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:textColor="@drawable/panel_title_text"
+                            android:duplicateParentState="true"
+                            android:visibility="gone"
+                            android:letterSpacing="0.08"
+                            android:text="@string/helios_keys" />
+                    </LinearLayout>
 
                     <TextView
-                        style="@style/CyberModuleTitle"
-                        android:text="@string/cyber_module_title" />
-
-                    <TextView
+                        android:id="@+id/helios_line"
                         style="@style/CyberModuleBody"
-                        android:text="@string/cyber_module_body" />
+                        android:textColor="@drawable/pill_text"
+                        android:duplicateParentState="true" />
                 </LinearLayout>
-            </com.gathin.tvhome.CyberTileFrame>
+            </com.gathin.tvhome.HeliosPanel>
 
             <com.gathin.tvhome.CyberTileFrame
                 android:layout_width="0dp"

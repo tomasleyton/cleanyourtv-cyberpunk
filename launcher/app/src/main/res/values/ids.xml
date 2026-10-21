@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Optional focusable view under the grid. When a layout gives a view this id, Down on the grid's
+         last row moves focus to it (MainActivity.onTileVerticalKey); the stock layout has none, so Down
+         there stays put as before. The view itself must send focus back up (src/cyberpunk HeliosPanel). -->
+    <item name="belowGrid" type="id" />
+</resources>

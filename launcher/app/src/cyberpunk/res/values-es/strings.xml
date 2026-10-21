@@ -7,12 +7,20 @@
     <string name="good_afternoon">// Buenas tardes</string>
     <string name="good_evening">// Buenas noches</string>
     <string name="good_night">// Buenas noches</string>
-    <string name="date_format">EEEE · d MMM yyyy</string>
+    <!-- Short weekday, as in the mock ("LUN · 19 OCT 2026"): the top bar grew a button and the long one no longer fits. -->
+    <string name="date_format">EEE · d MMM yyyy</string>
     <!-- After the index on the focused app tile: "01 // ACTIVE". -->
     <string name="tile_focused">%1$s // ACTIVO</string>
+    <string name="tile_look_text">TXT</string>
+    <string name="tile_look_image">IMG</string>
 
     <string name="cyber_module_title">Módulo // Helios IoT</string>
-    <string name="cyber_module_body" formatted="false">TEMP [--]°C   HUM [--]%   LUCES [--]</string>
+    <string name="helios_connecting">ENLAZANDO…</string>
+    <string name="helios_unconfigured">SIN CONFIG · helios.json</string>
+    <string name="helios_no_reply">SIN RESPUESTA</string>
+    <string name="helios_off">LUZ OFF</string>
+    <string name="helios_on">LUZ ON · %1$d%% · %2$s</string>
+
     <string name="cyber_status_title">Sys // Status</string>
     <string name="cyber_status_line">RAM %1$s/%2$s GB · %3$s · v%4$s</string>
     <string name="cyber_status_offline">Sin red</string>

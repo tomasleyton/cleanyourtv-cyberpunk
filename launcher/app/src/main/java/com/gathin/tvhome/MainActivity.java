@@ -660,7 +660,12 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             target = position - COLUMNS;
         } else {
             int lastRowStart = ((count - 1) / COLUMNS) * COLUMNS;
-            if (position >= lastRowStart) return true;     // already on the last row: stay put
+            if (position >= lastRowStart) {
+                // Last row: on to the layout's optional view under the grid (res/values/ids.xml), else stay put.
+                View below = findViewById(R.id.belowGrid);
+                if (below != null) below.requestFocus();
+                return true;
+            }
             target = Math.min(position + COLUMNS, count - 1);
         }
         focusTile(target);

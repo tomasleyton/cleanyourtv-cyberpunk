@@ -8,3 +8,6 @@ launcher/local.properties
 # your own TV's dumps (serial, android_id, device names) stay local
 backup/
 .DS_Store
+# the lamp's miIO credentials: helios.json lives on the TV, luztomas.json on the PC, never in the repo
+helios.json
+luztomas.json

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Helios panel (HeliosPanel, HeliosPresets): the lamp's colours, whites and the key hint. Its state
+     line strings (helios_on, helios_off, helios_unconfigured, helios_no_reply, helios_connecting) are
+     in strings.xml. -->
+<resources>
+    <!-- Shown in place of the panel title while it is focused. -->
+    <string name="helios_keys">OK on/off · hold OK white · &lt; &gt; colour · ▼ bright</string>
+    <!-- Left/Right colours (HeliosPresets.COLOURS). -->
+    <string name="helios_red">RED</string>
+    <string name="helios_blue">BLUE</string>
+    <string name="helios_purple">PURPLE</string>
+    <string name="helios_colour_green">GREEN</string>
+    <!-- The white cycle (hold OK): 3000K, 4100K, 6000K. -->
+    <string name="helios_white_warm">WARM WHITE</string>
+    <string name="helios_white_neutral">NEUTRAL WHITE</string>
+    <string name="helios_white_cool">COOL WHITE</string>
+</resources>

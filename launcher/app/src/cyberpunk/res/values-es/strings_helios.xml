@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="helios_keys">OK on/off · OK largo blanco · &lt; &gt; color · ▼ brillo</string>
+    <string name="helios_red">ROJO</string>
+    <string name="helios_blue">AZUL</string>
+    <string name="helios_purple">MORADO</string>
+    <string name="helios_colour_green">VERDE</string>
+    <string name="helios_white_warm">BLANCO CÁLIDO</string>
+    <string name="helios_white_neutral">BLANCO NEUTRO</string>
+    <string name="helios_white_cool">BLANCO FRÍO</string>
+</resources>

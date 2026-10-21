@@ -72,7 +72,7 @@ public class CyberTileFrame extends FrameLayout {
         }
         edgePaint.setStyle(Paint.Style.STROKE);
         edgePaint.setStrokeWidth(density);
-        textTiles = !panel && getResources().getBoolean(R.bool.cyber_text_tiles);
+        textTiles = !panel && TileLook.isText(context);   // config.xml default, flipped by the TXT/IMG button
         // Banner tiles keep the magenta edge under the neon frame; a text tile's edge turns cyan with it.
         edgeColors = context.getColorStateList(panel ? R.color.cyber_cyan_edge
                 : textTiles ? R.color.tile_edge : R.color.cyber_magenta_dim);
